@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "code-frame": "^5.0.0",
+    "inquirer": "^8.2.2",
+    "jest": "^27.5.1",
+    "node.js": "^0.0.1-security",
+    "requirer": "^0.0.4"
+  }
+}
