@@ -1,43 +1,48 @@
-const Employee = require('../lib/Employee');
+const Employee = require("../lib/Employee");
 
-test('creates employee object', () => {
-    const employee = new Employee();
-    expect(typeof(employee)).toBe("object");
+test("Can instantiate Employee instance", () => {
+  const e = new Employee();
+  expect(typeof(e)).toBe("object");
 });
 
-test('Set Employee Name', () => {
-    const name = "Grant"
-    const employee = new Employee(name);
-    expect(employee.name).toBe(name);
-    // expect(employee.id).toBe(name);
+test("Can set name via constructor arguments", () => {
+  const name = "Alice";
+  const e = new Employee(name);
+  expect(e.name).toBe(name);
 });
-test('Set ID', () => {
-    const testId = 100;
-    const employee = new Employee("Grant", testId);
-    expect(employee.id).toBe(testId);
+
+test("Can set id via constructor argument", () => {
+  const testValue = 100;
+  const e = new Employee("Foo", testValue);
+  expect(e.id).toBe(testValue);
 });
-test('Set Email', () => {
-    const testEmail = "grant@cheese.com"
-    const employee = new Employee("Grant", 1, testEmail);
-    expect(employee.email).toBe(testEmail);
+
+test("Can set email via constructor argument", () => {
+  const testValue = "test@test.com";
+  const e = new Employee("Foo", 1, testValue);
+  expect(e.email).toBe(testValue);
 });
-test('get name from getName', () => {
-    const testName = "Grant"
-    const employee = new Employee(testName);
-    expect(employee.getName()).toBe(testName);
+
+test("Can get name via getName()", () => {
+  const testValue = "Alice";
+  const e = new Employee(testValue);
+  expect(e.getName()).toBe(testValue);
 });
-test('get ID from getId', () => {
-    const testId = "100"
-    const employee = new Employee("Grant", testId);
-    expect(employee.getId()).toBe(testId);
+
+test("Can get id via getId()", () => {
+  const testValue = 100;
+  const e = new Employee("Foo", testValue);
+  expect(e.getId()).toBe(testValue);
 });
-test('get email from getEmail', () => {
-    const testEmail = "grant@cheese.com"
-    const employee = new Employee("Grant", 1, testEmail);
-    expect(employee.getEmail()).toBe(testEmail);
+
+test("Can get email via getEmail()", () => {
+  const testValue = "test@test.com";
+  const e = new Employee("Foo", 1, testValue);
+  expect(e.getEmail()).toBe(testValue);
 });
-test('getRole function', () => {
-    const testRole = "Employee"
-    const employee = new Employee("Grant", 1, "grant@cheese.com");
-    expect(employee.getRole()).toBe(testRole);
+
+test("getRole() should return \"Employee\"", () => {
+  const testValue = "Employee";
+  const e = new Employee("Alice", 1, "test@test.com");
+  expect(e.getRole()).toBe(testValue);
 });
